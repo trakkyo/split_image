@@ -24,6 +24,10 @@ def _make_file_path(index):
 def root():
     count = 0
     imgfilelist, _ = _make_file_path(count)
+    # subject to exist the first image
+    if len(imgfilelist) == 0:
+        return 'static/train_[A|B]/000000.jpg does not exist'
+
     return render_template("index.html", imgfilelist = imgfilelist, count = count)
 
 @app.route("/next")
@@ -38,7 +42,7 @@ def test():
         for imgfile, type in zip(imgfilelist, traintype):
             shutil.copy(imgfile, os.path.join('savepath', type))
 
-    imgfilelist, traintype = _make_file_path(int(count) + 1)
+    imgfilelist, _ = _make_file_path(int(count) + 1)
     if len(imgfilelist) == 0:
         return 'Finished'
 
