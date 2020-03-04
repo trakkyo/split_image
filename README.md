@@ -12,8 +12,8 @@ pip install -r requirements.txt
 - 画像の配置
   - 配置先
     - static/train_A: 元画像
-    - static/train_B: GroundTruth
-  - 元画像とGroundTruthは同一ファイル名ペアにする
+    - static/train_B: 正解画像
+  - 元画像と正解画像は同一ファイル名ペアにする
     - ファイル名を「6桁数値.jpg(例: 000000.jpg)」とし、連番で配置する
 
 - スクリプト実行
