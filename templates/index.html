@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block content %}
+    <img border="0" src="{{ imgfilelist[0] }}" width="512" height="512" alt="train">
+    <img border="1" src="{{ imgfilelist[1] }}" width="512" height="512" alt="ground truth">
+
+    <form action="/next" method="get">
+      <button name="use_img" style="WIDTH: 150px; HEIGHT: 50px" value="1,{{ count }}">use img</button>
+    </form>
+
+    <form action="/next" method="get">
+      <button name="use_img" style="WIDTH: 150px; HEIGHT: 50px" value="0,{{ count }}">don't use</button>
+    </form>
+{% endblock %}
